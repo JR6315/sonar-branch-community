@@ -2,9 +2,12 @@ package org.sonarsource.branch.scanner;
 
 import java.util.Map;
 import java.util.function.Supplier;
+
 import javax.annotation.Nullable;
-import com.google.common.base.Preconditions;
+
 import org.apache.commons.lang.StringUtils;
+import org.sonar.api.batch.InstantiationStrategy;
+import org.sonar.api.batch.ScannerSide;
 import org.sonar.api.utils.MessageException;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
@@ -17,12 +20,16 @@ import org.sonar.scanner.scan.branch.ProjectBranches;
 import org.sonar.scanner.scan.branch.ProjectPullRequests;
 import org.sonarsource.branch.PropertyDefinitions;
 
+import com.google.common.base.Preconditions;
+
 /**
  * Loads configuration for existing branches. Configuration for the new branch is computed from regexp.
  */
+@ScannerSide
+@InstantiationStrategy(InstantiationStrategy.PER_BATCH)
 public class BranchConfigurationLoaderImpl implements BranchConfigurationLoader {
     private static final Logger LOGGER = Loggers.get(BranchConfigurationLoaderImpl.class);
-
+    
     @Override
     public BranchConfiguration load(Map<String, String> localSettings, Supplier<Map<String, String>> remoteSettingsSupplier, ProjectBranches branches, ProjectPullRequests pullRequests) {
         String branchName = StringUtils.trimToNull(localSettings.get("sonar.branch.name"));
@@ -33,7 +40,7 @@ public class BranchConfigurationLoaderImpl implements BranchConfigurationLoader 
             return loadConfiguration(branchName, targetBranch, remoteSettingsSupplier, branches);
         }
     }
-
+    
     private BranchConfiguration loadConfiguration(String branchName, @Nullable String targetBranch, Supplier<Map<String, String>> remoteSettingsSupplier, ProjectBranches branches) {
         if (branches.isEmpty()) {
             if ("master".equals(branchName)) {

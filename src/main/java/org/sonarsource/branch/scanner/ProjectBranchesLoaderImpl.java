@@ -6,9 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 import org.sonar.scanner.bootstrap.ScannerWsClient;
@@ -19,6 +17,10 @@ import org.sonar.scanner.scan.branch.ProjectBranchesLoader;
 import org.sonarqube.ws.client.GetRequest;
 import org.sonarqube.ws.client.HttpException;
 import org.sonarqube.ws.client.WsResponse;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 /**
  * Retrieves list of project's branches using API call.

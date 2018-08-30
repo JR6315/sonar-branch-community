@@ -1,7 +1,9 @@
 package org.sonarsource.branch.scanner;
 
 import java.util.List;
+
 import javax.annotation.Nullable;
+
 import org.apache.commons.lang.StringUtils;
 import org.sonar.scanner.bootstrap.GlobalConfiguration;
 import org.sonar.scanner.scan.ProjectReactorValidator;

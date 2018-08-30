@@ -1,5 +1,5 @@
 # Branch Plugin for SonarQube Community Edition
-[![Build Status](https://travis-ci.org/s-pw/sonar-branch-community.svg?branch=master)](https://travis-ci.org/s-pw/sonar-branch-community)
+[![Build Status](https://travis-ci.org/uknickwilliams/sonar-branch-community.svg?branch=master)](https://travis-ci.org/uknickwilliams/sonar-branch-community)
 
 ## Description / Features
 
@@ -19,3 +19,7 @@ Drop plugin jar file in SonarQube `/extensions/plugins` directory and restart th
 | -------------  | -------------------- |
 | 1.x.x          | 6.7+, 7.0            |
 | 2.0.0          | 7.1                  |
+| 2.0.1          | 7.2.1 (not working)  |
+
+## Work In Progress
+The plugin compile but it's not working. I have a classpath problem when I install the plugin

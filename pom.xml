@@ -3,22 +3,24 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.sonarsource</groupId>
-    <artifactId>branch</artifactId>
-    <version>2.0.0</version>
+    <artifactId>sonar-branch-plugin</artifactId>
+    <version>2.0.1</version>
     <description>Branch Plugin for SonarQube Community Edition</description>
     <packaging>sonar-plugin</packaging>
 
     <name>Branch Plugin Community Edition</name>
-    <url>https://github.com/s-pw/sonar-branch-community</url>
+    <url>https://github.com/JR6315/sonar-branch-community</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <sonar.sonarQubeMinVersion>7.1</sonar.sonarQubeMinVersion>
+        <sonar.sonarQubeMinVersion>7.2.1</sonar.sonarQubeMinVersion>
         <sonar.pluginName>Branch Plugin Community Edition</sonar.pluginName>
         <sonar.pluginClass>org.sonarsource.branch.BranchPlugin</sonar.pluginClass>
+        <sonar.addMavenDescriptor>false</sonar.addMavenDescriptor>
+        <sonar.skipDependenciesPackaging>false</sonar.skipDependenciesPackaging>
     </properties>
 
     <licenses>
@@ -29,14 +31,18 @@
         </license>
     </licenses>
     <developers>
-        <developer>
+		<developer>
             <name>Pawel Switalski</name>
             <email>switalski.pl@gmail.com</email>
         </developer>
+        <developer>
+            <name>Julien RIBEYRE</name>
+            <email>julien.ribeyre@capgemini.com</email>
+        </developer>
     </developers>
     <scm>
-        <url>https://github.com/s-pw/sonar-branch-community</url>
-        <connection>scm:git:https://github.com/s-pw/sonar-branch-community.git</connection>
+        <url>https://github.com/JR6315/sonar-branch-community</url>
+        <connection>scm:git:https://github.com/JR6315/sonar-branch-community</connection>
     </scm>
     <issueManagement>
         <system>github</system>
@@ -123,15 +129,12 @@
             <version>${sonar.sonarQubeMinVersion}</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
             <version>3.0.2</version>
             <scope>provided</scope>
         </dependency>
-
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
