@@ -37,7 +37,7 @@
         </developer>
         <developer>
             <name>Julien RIBEYRE</name>
-            <email>julien.ribeyre@capgemini.com</email>
+            <email>jribeyre@free.fr</email>
         </developer>
     </developers>
     <scm>
@@ -46,7 +46,7 @@
     </scm>
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/s-pw/sonar-branch-community/issues</url>
+        <url>https://github.com/JR6315/sonar-branch-community/issues</url>
     </issueManagement>
 
     <build>
